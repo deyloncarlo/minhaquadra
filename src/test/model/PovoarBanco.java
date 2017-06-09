@@ -2,16 +2,13 @@ package test.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 import br.com.minhaquadra.enums.IndicadorSituacaoAgendamento;
-import br.com.minhaquadra.enums.TipoModalidadeEsporte;
 import br.com.minhaquadra.model.Agendamento;
 import br.com.minhaquadra.model.Estabelecimento;
 import br.com.minhaquadra.model.Quadra;
 import br.com.minhaquadra.model.Usuario;
 import br.com.minhaquadra.model.dao.AgendamentoDao;
-import br.com.minhaquadra.model.dao.EstabelecimentoDao;
 import br.com.minhaquadra.model.dao.QuadraDao;
 import br.com.minhaquadra.model.dao.UsuarioDao;
 
@@ -38,14 +35,16 @@ public class PovoarBanco
 	 */
 	private static void povoarTabelaQuadra()
 	{
-		Quadra v_quadra = new Quadra("Quadra 1", null, null, null, (float) 200);
-		v_quadra.setEstabelecimento(EstabelecimentoDao.obterPeloOid(1L));
-		QuadraDao.salvar(v_quadra);
-
-		Quadra v_quadra2 = new Quadra("Quadra 2", null, null, null, (float) 150);
-		v_quadra2.getListaModalidade().add(TipoModalidadeEsporte.BASQUETE);
-		v_quadra2.getListaModalidade().add(TipoModalidadeEsporte.FUTEBOL);
-		QuadraDao.salvar(v_quadra2);
+		// Quadra v_quadra = new Quadra("Quadra 1", null, null, null, (float)
+		// 200);
+		// v_quadra.setEstabelecimento(EstabelecimentoDao.obterPeloOid(1L));
+		// QuadraDao.salvar(v_quadra);
+		//
+		// Quadra v_quadra2 = new Quadra("Quadra 2", null, null, null, (float)
+		// 150);
+		// v_quadra2.getListaModalidade().add(TipoModalidadeEsporte.BASQUETE);
+		// v_quadra2.getListaModalidade().add(TipoModalidadeEsporte.FUTEBOL);
+		// QuadraDao.salvar(v_quadra2);
 	}
 
 	/**
@@ -130,19 +129,20 @@ public class PovoarBanco
 		v_estabelecimento.setRua("Rua Chapada do Norte");
 		v_estabelecimento.setNumero("191");
 
-		EstabelecimentoDao.salvar(v_estabelecimento);
+		// EstabelecimentoDao.salvar(v_estabelecimento);
 
 	}
 
 	private static void adicioarQuadraEmUmEstabelecimento()
 	{
-		Estabelecimento v_estabelecimento = EstabelecimentoDao.obterPeloOid(1L);
-		ArrayList<Quadra> v_listaQuadra = new ArrayList<Quadra>();
-		Quadra v_quadra = QuadraDao.obterPeloOid(2L);
-		v_listaQuadra.add(v_quadra);
-		v_estabelecimento.getListaQuradra().addAll(v_listaQuadra);
-		EstabelecimentoDao.salvar(v_estabelecimento);
-		QuadraDao.salvar(v_quadra);
+		// Estabelecimento v_estabelecimento =
+		// EstabelecimentoDao.obterPeloOid(1L);
+		// ArrayList<Quadra> v_listaQuadra = new ArrayList<Quadra>();
+		// Quadra v_quadra = QuadraDao.obterPeloOid(2L);
+		// v_listaQuadra.add(v_quadra);
+		// v_estabelecimento.getListaQuradra().addAll(v_listaQuadra);
+		// EstabelecimentoDao.salvar(v_estabelecimento);
+		// QuadraDao.salvar(v_quadra);
 	}
 
 }
